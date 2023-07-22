@@ -29,9 +29,8 @@ function Header() {
     const formattedDayOfWeek = dayOfWeek[today.getDay()];
     const formattedDate = `${today.getDate()} ${monthNames[today.getMonth()]} ${today.getFullYear()};`
 
-    const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
     return (
-        <Box display="flex" justifyContent="space-between">
+        <Box display="flex" justifyContent="space-between" marginBottom="30px">
             <Box>
                 <Typography fontSize={18} fontWeight={700} fontFamily="Nunito" color="#a401ff">{formattedDayOfWeek}</Typography>
 
