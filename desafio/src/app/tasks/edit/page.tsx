@@ -4,9 +4,8 @@ import ReturnButton from "/home/magno/Music/test-react-next-js-junior/desafio/sr
 import { Box, InputAdornment, TextField, Typography } from "@mui/material";
 import EditNoteIcon from "@mui/icons-material/EditNote";
 import React, { useRef, useState } from "react";
-import Layout from '@/components/layouts/Layout';
 
-export default function Add() {
+export default function Edit() {
 
     const inputRef = useRef<HTMLInputElement>(null);
 
@@ -34,18 +33,17 @@ export default function Add() {
     };
 
     return (
-        <Layout>
-            <ReturnButton page="Create" />
+        <div style={{ height: "100vh", padding: "20px", backgroundColor: "white" }}>
+            <ReturnButton page="Edit" />
 
             <Box
                 display="flex"
                 flexDirection="column"
                 justifyContent="center"
-                alignItems="center"
-                height="70vh"
+                height="80%"
             >
                 <Typography>Task title</Typography>
-                <Box bgcolor="#fafafa" width="100%" px="10px">
+                <Box bgcolor="#fafafa" width="100%" maxWidth="400px" px="10px">
                     <TextField
                         fullWidth
                         ref={inputRef}
@@ -75,19 +73,16 @@ export default function Add() {
                 display="flex"
                 alignItems="center"
                 justifyContent="center"
-                height="76px"
-                borderRadius="8px"
+                height="60px"
                 bgcolor="#a401ff"
                 color="white"
                 width="100%"
-
                 alignSelf="flex-end"
                 sx={{ cursor: "pointer" }}
                 onClick={handleCreateTask}
             >
                 <Typography>Create Task</Typography>
             </Box>
-
-        </Layout>
+        </div>
     );
 }
