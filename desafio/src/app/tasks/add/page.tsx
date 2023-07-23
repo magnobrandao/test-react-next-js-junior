@@ -5,6 +5,7 @@ import { Box, InputAdornment, TextField, Typography } from "@mui/material";
 import EditNoteIcon from "@mui/icons-material/EditNote";
 import React, { useRef, useState } from "react";
 import Layout from '@/components/layouts/Layout';
+import router from "next/router";
 
 export default function Add() {
 
@@ -12,6 +13,7 @@ export default function Add() {
 
     const [inputValue, setInputValue] = useState("");
 
+    localStorage.removeItem("task1")
 
     const handleCreateTask = () => {
 
@@ -24,6 +26,7 @@ export default function Add() {
             console.log("Task added to localStorage:", taskId, inputValue);
 
             setInputValue("");
+
         }
     };
 
