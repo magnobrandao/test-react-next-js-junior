@@ -5,8 +5,12 @@ import { Box, InputAdornment, TextField, Typography } from "@mui/material";
 import EditNoteIcon from "@mui/icons-material/EditNote";
 import React, { useRef, useState } from "react";
 import Layout from '@/components/layouts/Layout';
+import router from "next/router";
 
 export default function Add() {
+
+    const [error, setError] = useState(false);
+    const [success, setSuccess] = useState(false);
 
     const inputRef = useRef<HTMLInputElement>(null);
 
@@ -21,16 +25,23 @@ export default function Add() {
 
             localStorage.setItem(taskId, inputValue);
 
-            console.log("Task added to localStorage:", taskId, inputValue);
+            setSuccess(true);
+
+            setTimeout(() => {
+                setSuccess(false);
+            }, 2000);
 
             setInputValue("");
+        } else {
+            setError(true);
         }
     };
-
-
     const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-
         setInputValue(event.target.value);
+    };
+
+    const handleInputFocus = () => {
+        setError(false);
     };
 
     return (
@@ -52,6 +63,7 @@ export default function Add() {
                         placeholder="Type here"
                         value={inputValue}
                         onChange={handleInputChange}
+                        onFocus={handleInputFocus}
                         InputProps={{
                             startAdornment: (
                                 <InputAdornment position="start">
@@ -68,7 +80,20 @@ export default function Add() {
                         }}
                     />
                 </Box>
+
+                {error && (
+                    <Typography color="red" mt="10px">
+                        Please enter a task title
+                    </Typography>
+                )}
+                {success && (
+                    <Typography color="green" mt="10px">
+                        Task created successfully
+                    </Typography>
+                )}
             </Box>
+
+
 
             <Box
                 mt="10px"

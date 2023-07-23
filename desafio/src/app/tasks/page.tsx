@@ -6,13 +6,16 @@ import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import Header from '@/components/header/Header';
 import React, { useEffect, useState } from 'react'
 import Layout from '@/components/layouts/Layout';
-import TaskCard from '@/components/taskCard/TaskCardChecked';
 import TaskCardChecked from '@/components/taskCard/TaskCardChecked';
 import TaskCardUnchecked from '@/components/taskCard/TaskCardUnchecked';
 
+
+
 export default function Tasks() {
+
     const [tasks, setTasks] = useState<{ [key: string]: boolean }>({});
     const [taskKeys, setTaskKeys] = useState<string[]>([]);
+
 
     const fetchTasksFromLocalStorage = () => {
         const tasksFromLocalStorage: { [key: string]: boolean } = {};
@@ -44,8 +47,34 @@ export default function Tasks() {
     const checkedTasks = taskKeys.filter((task) => tasks[task]);
     const uncheckedTasks = taskKeys.filter((task) => !tasks[task]);
 
-
     const totalTasks = taskKeys.length;
+
+    function getKeyByValue(value: string) {
+        // Obtém todos os itens do localStorage como um array de objetos { chave: valor }
+        var allItems = Object.entries(localStorage);
+
+        // Itera pelos itens para encontrar a chave que possui o valor desejado
+        for (var i = 0; i < allItems.length; i++) {
+            var key = allItems[i][0];   // Obtem a chave do item atual
+            var storedValue = allItems[i][1];   // Obtem o valor do item atual
+
+            if (storedValue === value) {
+                return key; // Retorna a chave quando encontrar o valor desejado
+            }
+        }
+
+        return null; // Retorna null se o valor não for encontrado em nenhuma chave
+    }
+
+    // Exemplo de uso:
+    var valueToFind = 'Fazer nada';
+    var foundKey = getKeyByValue(valueToFind);
+
+    if (foundKey !== null) {
+        console.log('Chave encontrada para o valor "', valueToFind, '":', foundKey);
+    } else {
+        console.log('O valor "', valueToFind, '" não foi encontrado em nenhuma chave do localStorage.');
+    }
 
     return (
         <Layout>
@@ -107,6 +136,7 @@ export default function Tasks() {
                     </Box>
                 </Link>{" "}
             </Box>
+
         </Layout>
 
 
