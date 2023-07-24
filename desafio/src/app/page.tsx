@@ -1,6 +1,6 @@
 import Tasks from './tasks/page'
 
-export default function Home() {
+export default function Page() {
   return (
     <Tasks />
   )

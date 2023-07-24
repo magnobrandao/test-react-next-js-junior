@@ -1,13 +1,11 @@
 "use client";
-import { Avatar, Box, Button, Link, Typography } from '@mui/material'
-import { Nunito } from 'next/font/google';
-import Checkbox from '@mui/material/Checkbox';
-import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+import { Box, Link, Typography } from '@mui/material'
 import Header from '@/components/header/Header';
 import React, { useEffect, useState } from 'react'
 import Layout from '@/components/layouts/Layout';
-import TaskCardChecked from '@/components/taskCard/TaskCardChecked';
-import TaskCardUnchecked from '@/components/taskCard/TaskCardUnchecked';
+import SubHeader from '@/components/subHeader/SubHeader';
+import TaskCardChecked from '@/components/taskCardChecked/TaskCardChecked';
+import TaskCardUnchecked from '@/components/taskCardUnchecked/TaskCardUnchecked';
 
 
 
@@ -49,46 +47,12 @@ export default function Tasks() {
 
     const totalTasks = taskKeys.length;
 
-    function getKeyByValue(value: string) {
-        // Obtém todos os itens do localStorage como um array de objetos { chave: valor }
-        var allItems = Object.entries(localStorage);
 
-        // Itera pelos itens para encontrar a chave que possui o valor desejado
-        for (var i = 0; i < allItems.length; i++) {
-            var key = allItems[i][0];   // Obtem a chave do item atual
-            var storedValue = allItems[i][1];   // Obtem o valor do item atual
-
-            if (storedValue === value) {
-                return key; // Retorna a chave quando encontrar o valor desejado
-            }
-        }
-
-        return null; // Retorna null se o valor não for encontrado em nenhuma chave
-    }
-
-    // Exemplo de uso:
-    var valueToFind = 'Fazer nada';
-    var foundKey = getKeyByValue(valueToFind);
-
-    if (foundKey !== null) {
-        console.log('Chave encontrada para o valor "', valueToFind, '":', foundKey);
-    } else {
-        console.log('O valor "', valueToFind, '" não foi encontrado em nenhuma chave do localStorage.');
-    }
 
     return (
         <Layout>
             <Header />
-            <Box display="flex" justifyContent="space-between">
-                <Box>
-                    <Typography fontSize={24} fontWeight={700} fontFamily="Nunito" color="#262626">Task</Typography>
-                    <Typography fontSize={24} fontWeight={700} fontFamily="Nunito" color="#262626">List</Typography>
-                </Box>
-                <Box alignSelf="end" fontSize={14} fontFamily="Nunito" fontWeight={700} color="#7F00FF">
-                    {checkedTasks.length}/{totalTasks} Task finished{" "}
-                </Box>
-
-            </Box>
+            <SubHeader totalTasks={totalTasks} checkedTasksValue={checkedTasks.length} />
             <Box
                 mt="20px"
                 color="white"

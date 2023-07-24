@@ -1,11 +1,12 @@
 "use client";
 
-import ReturnButton from "/home/magno/Music/test-react-next-js-junior/desafio/src/components/button/ReturnButton";
+import ReturnButton from "../../../../components/returnButton/ReturnButton";
 import { Box, InputAdornment, TextField, Typography } from "@mui/material";
 import EditNoteIcon from "@mui/icons-material/EditNote";
 import React, { useEffect, useRef, useState } from "react";
 import Layout from '@/components/layouts/Layout';
 import router from "next/router";
+import { StandardButton } from "@/components/standardButton/StandardButton";
 
 export default function Edit({ params: { id } }: { params: { id: string } }) {
 
@@ -13,7 +14,7 @@ export default function Edit({ params: { id } }: { params: { id: string } }) {
 
     const [inputValue, setInputValue] = useState("");
 
-    // useEffect to retrieve the value from localStorage based on the provided id
+
     useEffect(() => {
         const storedValue = localStorage.getItem(id);
         if (storedValue) {
@@ -27,7 +28,7 @@ export default function Edit({ params: { id } }: { params: { id: string } }) {
 
     const handleEditTask = () => {
         if (inputValue.trim() !== "") {
-            // Save the updated value to localStorage with the same id key
+
             localStorage.setItem(id, inputValue);
 
             console.log("Task updated in localStorage:", id, inputValue);
@@ -36,6 +37,13 @@ export default function Edit({ params: { id } }: { params: { id: string } }) {
 
             window.location.href = "/tasks";
         }
+    };
+    const handleRemoveTask = () => {
+
+        localStorage.removeItem(id);
+        setInputValue("");
+        window.location.href = "/tasks";
+
     };
 
 
@@ -53,7 +61,7 @@ export default function Edit({ params: { id } }: { params: { id: string } }) {
                 flexDirection="column"
                 justifyContent="center"
                 alignItems="center"
-                height="70vh"
+                height="55vh"
             >
                 <Box width="100%">
                     <Typography color="#262626" fontSize={18} fontWeight={700} fontFamily="Nunito">Task title</Typography>
@@ -83,42 +91,9 @@ export default function Edit({ params: { id } }: { params: { id: string } }) {
                 </Box>
             </Box>
 
-            <Box
-                mt="10px"
-                display="flex"
-                alignItems="center"
-                justifyContent="center"
-                height="76px"
-                borderRadius="8px"
-                bgcolor="#a401ff"
-                color="white"
-                width="100%"
+            <StandardButton onClick={handleEditTask} label="Edit Task" />
 
-                alignSelf="flex-end"
-                sx={{ cursor: "pointer" }}
-                onClick={handleEditTask}
-            >
-                <Typography>Edit Task</Typography>
-            </Box>
-
-            <Box
-                mt="10px"
-                display="flex"
-                alignItems="center"
-                justifyContent="center"
-                height="76px"
-                borderRadius="8px"
-                bgcolor="#a401ff"
-                color="white"
-                width="100%"
-
-                alignSelf="flex-end"
-                sx={{ cursor: "pointer" }}
-                onClick={handleEditTask}
-            >
-                <Typography>Edit Task</Typography>
-            </Box>
-
+            <StandardButton onClick={handleRemoveTask} label="Remove Task" color="red" />
         </Layout>
     );
 }
