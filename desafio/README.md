@@ -1,34 +1,64 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Desafio Técnico - Aquarela
 
-## Getting Started
+O projeto é uma aplicação simples de lista de tarefas (to-do list) desenvolvida em Typescrip,React e Next.js. Sua funcionalidade principal é permitir que os usuários gerenciem suas tarefas, podendo adicionar, editar e excluir itens da lista.
 
-First, run the development server:
+## Recursos Utilizados no Projeto
+
+**Typescript:** Foi empregado o Typescript para melhorar a qualidade do código, através da adoção de tipagem estática.
+
+**React:** A biblioteca React foi fundamental para criar interfaces de usuário interativas e responsivas. Com ela, foi possível dividir a aplicação em componentes reutilizáveis, facilitando o desenvolvimento e a manutenção do código. 
+
+**Next.js:** Funcionalidade de roteamento simplificado facilitando a navegação do usuário dentro da aplicação. E com a otimização do aplicativo para produção, proporcionando uma melhor experiência de uso.
+
+**Branches e Convenção de Commits:** A metodologia de trabalho com branches foi adotada para organizar o desenvolvimento de forma mais eficiente. Cada funcionalidade ou correção foi desenvolvida em sua própria branch, permitindo uma implementação isolada e segura. A convenção de commits adotada tornou o histórico de alterações mais claro e compreensível, facilitando o entendimento do que foi modificado em cada etapa do desenvolvimento.
+
+**Material UI:** A biblioteca de componentes Material UI foi utilizada para acelerar o desenvolvimento da interface de usuário. Com uma vasta gama de componentes prontos e estilizados, foi possível criar uma aparência moderna e responsiva para a aplicação sem a necessidade de estilização manual. 
+
+**Armazenamento no Localstorage:** Os dados da lista de tarefas são armazenados localmente no Localstorage do navegador, proporcionando uma experiência consistente para o usuário. Isso permite que as tarefas adicionadas e o progresso realizado sejam salvos, mesmo após fechar o navegador ou atualizar a página. 
+
+
+
+
+## Funcionalidades
+
+- Página Inicial de Listagem de Tarefas
+- Adicionar Novas Tarefas
+- Edição de Tarefas Existentes
+- Exclusão de Tarefas
+- Roteamento usando Next.js
+- Componentes Funcionais e Hooks
+- Persistência das Tarefas no Local Storage
+
+
+
+## Visualização do Projeto
+
+![App Screenshot](https://i.imgur.com/LSVmA7Y.png)
+
+
+## 🔗 Pré-requisitos
+
+
+Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas: git e node.js. Você também vai precisar de um editor de código, recomendo o VS Code.
+
+## Rodando o Projeto
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+
+# Clone este repositório (ou download )
+
+  git@github.com:magnobrandao/test-react-next-js-junior.git
+
+# Acesse a pasta do projeto no terminal/cmd
+
+  $ cd desafio/
+
+# Instale as dependências
+
+  $ yarn install
+
+# Após a instalação, execute o comando para rodar a aplicação
+
+  $ yarn start
 ```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+    
