@@ -14,7 +14,6 @@ export const StandardButton: React.FC<ButtonProps> = ({
 }) => {
     return (
         <Button
-
             sx={{
                 cursor: "pointer",
                 marginTop: "10px",
@@ -27,18 +26,18 @@ export const StandardButton: React.FC<ButtonProps> = ({
                 color: "white",
                 width: "100%",
                 alignSelf: "flex-end",
-                fontFamily: "Nunito",
-                fontWeight: "700",
-                fontSize: "16"
+                "&:hover": {
 
-
-
+                    bgcolor: color ? color : "#a401ff",
+                    color: "white",
+                },
+                textTransform: 'none'
             }}
             onClick={onClick}
             disableRipple
 
         >
-            <Typography>{label}</Typography>
+            <Typography fontWeight={700} color="#FFFFFF">{label}</Typography>
         </Button>
     );
 };

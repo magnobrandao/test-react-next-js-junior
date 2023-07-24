@@ -5,7 +5,6 @@ import { Box, InputAdornment, TextField, Typography } from "@mui/material";
 import EditNoteIcon from "@mui/icons-material/EditNote";
 import React, { useEffect, useRef, useState } from "react";
 import Layout from '@/components/layouts/Layout';
-import router from "next/router";
 import { StandardButton } from "@/components/standardButton/StandardButton";
 
 export default function Edit({ params: { id } }: { params: { id: string } }) {

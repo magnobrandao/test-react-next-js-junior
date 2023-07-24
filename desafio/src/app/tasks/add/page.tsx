@@ -5,6 +5,7 @@ import { Box, InputAdornment, TextField, Typography } from "@mui/material";
 import EditNoteIcon from "@mui/icons-material/EditNote";
 import React, { useRef, useState } from "react";
 import Layout from '@/components/layouts/Layout';
+import { StandardButton } from "@/components/standardButton/StandardButton";
 
 export default function Add() {
 
@@ -54,7 +55,9 @@ export default function Add() {
                 alignItems="center"
                 height="70vh"
             >
-                <Typography>Task title</Typography>
+                <Box width="100%">
+                    <Typography color="#262626" fontSize={18} fontWeight={700} fontFamily="Nunito">Task title</Typography>
+                </Box>
                 <Box bgcolor="#fafafa" width="100%" px="10px">
                     <TextField
                         fullWidth
@@ -94,23 +97,7 @@ export default function Add() {
 
 
 
-            <Box
-                mt="10px"
-                display="flex"
-                alignItems="center"
-                justifyContent="center"
-                height="76px"
-                borderRadius="8px"
-                bgcolor="#a401ff"
-                color="white"
-                width="100%"
-
-                alignSelf="flex-end"
-                sx={{ cursor: "pointer" }}
-                onClick={handleCreateTask}
-            >
-                <Typography>Create Task</Typography>
-            </Box>
+            <StandardButton onClick={handleCreateTask} label="Create Task" />
 
         </Layout>
     );
