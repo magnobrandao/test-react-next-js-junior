@@ -6,6 +6,7 @@ import Layout from '@/components/layouts/Layout';
 import SubHeader from '@/components/subHeader/SubHeader';
 import TaskCardChecked from '@/components/taskCardChecked/TaskCardChecked';
 import TaskCardUnchecked from '@/components/taskCardUnchecked/TaskCardUnchecked';
+import { StandardButton } from '@/components/standardButton/StandardButton';
 
 
 
@@ -84,20 +85,7 @@ export default function Tasks() {
 
             <Box marginTop="auto">
                 <Link href="/tasks/add" underline="none">
-                    <Box
-                        mt="10px"
-                        display="flex"
-                        alignItems="center"
-                        justifyContent="center"
-                        height="76px"
-                        bgcolor="#a401ff"
-                        color="white"
-                        borderRadius="8px"
-
-
-                    >
-                        <Typography>Create Task</Typography>
-                    </Box>
+                    <StandardButton label="Create Task" />
                 </Link>{" "}
             </Box>
 
