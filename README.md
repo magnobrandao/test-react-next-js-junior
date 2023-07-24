@@ -1,43 +1,62 @@
-# Teste Técnico - Desenvolvedor React/Next.js Júnior
+# Desafio Técnico - Aquarela
 
-Olá, candidato!
+O projeto é uma aplicação simples de lista de tarefas (to-do list) desenvolvida em Typescrip,React e Next.js. Sua funcionalidade principal é permitir que os usuários gerenciem suas tarefas, podendo adicionar, editar e excluir itens da lista.
 
-Esse é o teste técnico para a posição de Desenvolvedor React/Next.js Júnior. Estamos ansiosos para ver como você lida com o desafio!
+## Recursos Utilizados no Projeto
 
-## Descrição do Projeto
+**Typescript:** Foi empregado o Typescript para melhorar a qualidade do código, através da adoção de tipagem estática.
 
-Seu objetivo será criar uma aplicação simples de listagem de tarefas (to-do list) usando React e Next.js. A aplicação deve permitir que os usuários criem, editem e excluam tarefas. O layout da aplicação está disponível no [Figma](https://www.figma.com/file/C3XPJ8A13pPDEDM3LOtwKE/Teste-T%C3%A9cnico---Desenvolvedor-React%2FNext.js-J%C3%BAnior?type=design&node-id=0%3A1&t=spD6VMoxJ70prflZ-1).
+**React:** A biblioteca React foi fundamental para criar interfaces de usuário interativas e responsivas. Com ela, foi possível dividir a aplicação em componentes reutilizáveis, facilitando o desenvolvimento e a manutenção do código. 
 
-## Requisitos
+**Next.js:** Funcionalidade de roteamento simplificado facilitando a navegação do usuário dentro da aplicação. E com a otimização do aplicativo para produção, proporcionando uma melhor experiência de uso.
 
-- Crie uma página inicial que exiba a lista de tarefas.
-- Permita que os usuários adicionem novas tarefas através de um formulário.
-- As tarefas devem ser armazenadas no estado da aplicação usando o Hook `useState`.
-- Permita que os usuários editem tarefas existentes.
-- Permita que os usuários excluam tarefas.
-- Crie rotas usando o roteamento do Next.js.
-- Use componentes funcionais e Hooks.
+**Branches e Convenção de Commits:** A metodologia de trabalho com branches foi adotada para organizar o desenvolvimento de forma mais eficiente. Cada funcionalidade ou correção foi desenvolvida em sua própria branch, permitindo uma implementação isolada e segura. A convenção de commits adotada tornou o histórico de alterações mais claro e compreensível, facilitando o entendimento do que foi modificado em cada etapa do desenvolvimento.
 
-## Bônus
+**Material UI:** A biblioteca de componentes Material UI foi utilizada para acelerar o desenvolvimento da interface de usuário. Com uma vasta gama de componentes prontos e estilizados, foi possível criar uma aparência moderna e responsiva para a aplicação sem a necessidade de estilização manual. 
 
-Se você se sentir à vontade, considere os seguintes desafios bônus:
+**Armazenamento no Localstorage:** Os dados da lista de tarefas são armazenados localmente no Localstorage do navegador, proporcionando uma experiência consistente para o usuário. Isso permite que as tarefas adicionadas e o progresso realizado sejam salvos, mesmo após fechar o navegador ou atualizar a página. 
 
-- Persista as tarefas no local storage para que as tarefas não sejam perdidas quando a página for recarregada.
-- Use TypeScript para adicionar tipagem estática ao projeto.
 
-## Entrega
 
-- O código deve ser publicado em um repositório no GitHub.
-- Inclua um arquivo README com instruções para instalar e rodar o projeto localmente.
-- Por favor, nos envie o link do repositório até a data especificada no email.
 
-## Avaliação
+## Funcionalidades
 
-Seu projeto será avaliado com base nos seguintes critérios:
+- Página Inicial de Listagem de Tarefas
+- Adicionar Novas Tarefas
+- Edição de Tarefas Existentes
+- Exclusão de Tarefas
+- Roteamento usando Next.js
+- Componentes Funcionais e Hooks
+- Persistência das Tarefas no Local Storage
 
-- Funcionalidade: o projeto cumpre os requisitos solicitados?
-- Código: o código é claro e de fácil compreensão?
-- Organização: o projeto é bem organizado?
-- Documentação: o projeto inclui um arquivo README com instruções claras para rodá-lo localmente?
 
-Lembre-se, este teste não é uma competição para ver quem pode fazer a tarefa mais complexa. Queremos ver como você estrutura seu código, sua capacidade de resolução de problemas e como você comunica suas decisões por meio do código e da documentação. Boa sorte!
+
+## Visualização do Projeto
+
+![App Screenshot](https://i.imgur.com/LSVmA7Y.png)
+
+
+## 🔗 Pré-requisitos
+
+
+Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas: git e node.js. Você também vai precisar de um editor de código, recomendo o VS Code.
+
+## Rodando o Projeto
+
+```bash
+
+# Clone este repositório (ou download )
+
+ git clone git@github.com:magnobrandao/test-react-next-js-junior.git
+
+# Acesse a pasta do projeto no terminal/cmd
+
+  $ cd test-react-next-js-junior/desafio
+
+# Instale as dependências
+
+  $ yarn 
+
+# Após a instalação, execute o comando para rodar a aplicação
+
+  $ yarn dev
