@@ -1,4 +1,4 @@
-# Desafio Técnico - Aquarela
+# Projeto Técnico - ToDoList
 
 O projeto é uma aplicação simples de lista de tarefas (to-do list) desenvolvida em Typescrip,React e Next.js. Sua funcionalidade principal é permitir que os usuários gerenciem suas tarefas, podendo adicionar, editar e excluir itens da lista.
 
